@@ -32,6 +32,76 @@ from history_manager import (
 from visualizer import auto_visualize
 
 
+# -------------------------------------------------
+# FALLBACK FUNCTIONS (used when Ollama is unavailable)
+# -------------------------------------------------
+
+def _fallback_sql(question, schema_dict):
+    """
+    Generate a simple SQL query when Ollama is unavailable.
+    """
+
+    if not schema_dict:
+        return None, "No database schema found."
+
+    tables = list(schema_dict.keys())
+    table = tables[0]
+
+    question_lower = question.lower()
+
+    if any(word in question_lower for word in ["count", "total", "how many"]):
+        return (
+            f"SELECT COUNT(*) AS total_records FROM {table};",
+            "Fallback COUNT query generated."
+        )
+
+    if any(word in question_lower for word in ["show", "list", "display", "view"]):
+        return (
+            f"SELECT * FROM {table} LIMIT 10;",
+            "Fallback SELECT query generated."
+        )
+
+    return (
+        f"SELECT * FROM {table} LIMIT 10;",
+        "Default fallback query generated."
+    )
+
+
+def _basic_insight(df, question):
+    """
+    Generate basic insights when AI is unavailable.
+    """
+
+    if df is None or df.empty:
+        return "No records found for this query."
+
+    insights = []
+
+    insights.append(
+        f"Query returned {len(df)} rows and {len(df.columns)} columns."
+    )
+
+    insights.append(
+        f"Columns available: {', '.join(df.columns)}."
+    )
+
+    numeric_cols = df.select_dtypes(include=["number"]).columns
+
+    if len(numeric_cols) > 0:
+        insights.append(
+            f"Numeric fields detected: {', '.join(numeric_cols)}."
+        )
+
+        for col in numeric_cols[:3]:
+            insights.append(
+                f"{col}: min={df[col].min()}, "
+                f"max={df[col].max()}, "
+                f"avg={round(df[col].mean(), 2)}"
+            )
+
+    return "\n".join(insights)
+
+
 class AgentStep:
     def __init__(
         self,
