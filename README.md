@@ -1,6 +1,7 @@
-                                                         🤖 ANANTA AI
+                                                   🤖 ANANTA AI
+___________________________________________________________________________________________________________
 
->            Ask questions in plain English. Get SQL queries, data tables, visualizations, and AI-powered insights — automatically.
+                 Ask questions in plain English. Get SQL queries, data tables, visualizations, and AI-                                          powered insights — automatically.
 
 
 
