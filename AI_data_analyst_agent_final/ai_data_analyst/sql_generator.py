@@ -4,7 +4,7 @@ sql_generator.py - Generates SQL queries from natural language using Ollama (lla
 import requests
 import json
 
-OLLAMA_URL = "http://localhost:11434/api/generate"
+OLLAMA_URL = "http://YOUR_SERVER_IP:11434/api/generate"
 MODEL = "llama3"
 
 
@@ -74,10 +74,13 @@ Keep it concise, professional, and data-driven. Use numbers from the results."""
         return f"Insight generation unavailable: {str(e)}"
 
 
+
 def check_ollama_connection() -> bool:
-    """Check if Ollama is running."""
     try:
-        r = requests.get("http://localhost:11434/api/tags", timeout=5)
+        r = requests.get(
+            "http://YOUR_SERVER_IP:11434/api/tags",
+            timeout=5
+        )
         return r.status_code == 200
     except Exception:
         return False
