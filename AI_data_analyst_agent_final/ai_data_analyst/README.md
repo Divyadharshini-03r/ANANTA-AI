@@ -1,16 +1,11 @@
-# 🤖 ANANTA AI
+                                                         🤖 ANANTA AI
 
-> **Ask questions in plain English. Get SQL queries, data tables, visualizations, and AI-powered insights — automatically.**
+>            Ask questions in plain English. Get SQL queries, data tables, visualizations, and AI-powered insights — automatically.
 
-[![Python](https://img.shields.io/badge/Python-3.11+-blue?logo=python)](https://python.org)
-[![Streamlit](https://img.shields.io/badge/Streamlit-1.32+-red?logo=streamlit)](https://streamlit.io)
-[![Ollama](https://img.shields.io/badge/AI-Ollama%20llama3-purple)](https://ollama.ai)
-[![SQLite](https://img.shields.io/badge/Database-SQLite-green)](https://sqlite.org)
-[![License](https://img.shields.io/badge/License-MIT-yellow)](LICENSE)
 
----
 
-## 🎯 What It Does
+
+ 🎯 What It Does
 
 The ANANTA bridges the gap between natural language and database analytics. Type a question like *"Which department has the highest average salary?"* and the agent:
 
@@ -22,9 +17,9 @@ The ANANTA bridges the gap between natural language and database analytics. Type
 6. 🌐 Optionally enriches with live API data (weather / exchange rates)
 7. 💡 Returns insights, charts, and recommendations
 
----
 
-## ✨ Features
+
+ ✨ Features
 
 | Feature | Description |
 |---|---|
@@ -81,11 +76,8 @@ ollama serve
 streamlit run app.py
 ```
 
-Open your browser at **http://localhost:8501**
 
----
-
-## 📁 Project Structure
+ 📁 Project Structure
 
 ```
 ai-data-analyst-agent/
@@ -106,10 +98,8 @@ ai-data-analyst-agent/
 ```
 
 ---
+ 💬 Example Questions
 
-## 💬 Example Questions
-
-```
 # Employee queries
 "Show employees earning above 50000"
 "Which department has the highest average salary?"
@@ -133,11 +123,9 @@ ai-data-analyst-agent/
 # API-enhanced
 "Show employee data and today's weather in Mumbai"
 "What are the current USD exchange rates?"
-```
 
----
 
-## 🗄️ Database Schema
+🗄️ Database Schema
 
 The app auto-creates `database.db` with 4 tables and sample data:
 
@@ -146,9 +134,8 @@ The app auto-creates `database.db` with 4 tables and sample data:
 **students** — id, name, department, cgpa, year, email, city  
 **sales** — id, product, amount, quantity, sale_date, region, salesperson  
 
----
 
-## 🔒 Safety Architecture
+ 🔒 Safety Architecture
 
 All SQL goes through a strict safety filter before execution:
 
@@ -157,9 +144,7 @@ All SQL goes through a strict safety filter before execution:
 - ❌ **Blocked**: SQL injection patterns (`--`, `/*`, `;--`)
 - ❌ **Blocked**: Multiple statements separated by `;`
 
----
-
-## 🌐 External API Integration
+ 🌐 External API Integration
 
 | API | Source | Key Required |
 |---|---|---|
@@ -167,36 +152,30 @@ All SQL goes through a strict safety filter before execution:
 | Weather | OpenWeatherMap | Optional |
 | Exchange Rates | open.er-api.com | No |
 
-Trigger by asking: *"...and today's weather in [city]"*
-
----
-
-## 📊 Visualization Logic
+ 📊 Visualization Logic
 
 Charts are auto-selected based on question keywords and data shape:
 
 | Trigger Words | Chart Type |
-|---|---|
 | trend, over time, monthly, date | Line Chart |
 | percent, distribution, breakdown | Pie Chart |
 | compare, highest, average, salary | Bar Chart |
 | (default, <10 unique values) | Bar Chart |
 | (default, >10 unique values) | Line Chart |
 
----
 
-## 📸 Screenshots
+ 📸 Screenshots
+ 
 
-**Main Interface** — Dark-themed chat-style UI with quick example buttons  
-**Agent Steps** — Live 7-step reasoning panel showing each decision  
-**Results** — Data table + auto-generated chart side by side  
-**Insights Panel** — AI-written analysis with summary, observations, and recommendations  
-**Weather Widget** — Live weather data card integrated with query results  
-**Sidebar** — Database schema browser, prompt history, query history
+Main Interface   — Dark-themed chat-style UI with quick example buttons  
+Agent Steps      — Live 7-step reasoning panel showing each decision  
+Results          — Data table + auto-generated chart side by side  
+Insights Panel   — AI-written analysis with summary, observations, and recommendations  
+Weather Widget   — Live weather data card integrated with query results  
+Sidebar          — Database schema browser, prompt history, query history
 
----
 
-## 🔮 Future Enhancements
+🔮 Future Enhancements
 
 - [ ] Support for PostgreSQL / MySQL backends
 - [ ] Multi-turn conversational memory
@@ -208,19 +187,10 @@ Charts are auto-selected based on question keywords and data shape:
 - [ ] LLM model selector (GPT-4, Claude, Gemini)
 - [ ] Dashboard builder with pinned charts
 
----
 
-## 📄 License
+👤 Author
 
-MIT License — free for personal and commercial use.
-
----
-
-## 👤 Author
-
-Built for Hackathon 2024 as an end-to-end AI data analytics system.  
+Built for Hackathon at Infinite IT solutions.  
 Tech Stack: Python · Streamlit · SQLite · Ollama llama3 · Matplotlib
 
----
 
-*⭐ If this project helped you, please give it a star on GitHub!*
