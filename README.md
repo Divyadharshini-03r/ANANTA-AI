@@ -76,7 +76,7 @@ ollama serve
 ```bash
 streamlit run app.py
 ```
-
+Project Link :https://ananta-ai-x5aevw3pijtdbpqbjixkxs.streamlit.app/
 
  📁 Project Structure
 
