@@ -64,19 +64,15 @@ pip install -r requirements.txt
 
 ### 4. Set Up Ollama (AI Engine)
 ```bash
-# Install Ollama from https://ollama.ai/download
 # Then pull the llama3 model:
-ollama pull llama3
-
-# Start the Ollama server:
-ollama serve
+Groq API llama 3.3
 ```
 
 ### 5. Run the App
 ```bash
 streamlit run app.py
 ```
-Project Link :https://ananta-ai-x5aevw3pijtdbpqbjixkxs.streamlit.app/
+Project Link :https://anantaai.streamlit.app/
 
  📁 Project Structure
 
@@ -86,7 +82,7 @@ ai-data-analyst-agent/
 ├── agent.py             # 7-step agent reasoning loop
 ├── database.py          # SQLite setup + sample data creation
 ├── schema_reader.py     # Auto schema introspection
-├── sql_generator.py     # Ollama llama3 NL→SQL generation
+├── sql_generator.py     # Groq API  llama 3.3 NL→SQL generation
 ├── query_executor.py    # Safe SQL execution via pandas
 ├── safety_checker.py    # SQL validation (SELECT-only guard)
 ├── api_service.py       # Weather + exchange rate APIs
@@ -165,17 +161,6 @@ Charts are auto-selected based on question keywords and data shape:
 | (default, >10 unique values) | Line Chart |
 
 
- 📸 Screenshots
- 
-
-Main Interface   — Dark-themed chat-style UI with quick example buttons  
-Agent Steps      — Live 7-step reasoning panel showing each decision  
-Results          — Data table + auto-generated chart side by side  
-Insights Panel   — AI-written analysis with summary, observations, and recommendations  
-Weather Widget   — Live weather data card integrated with query results  
-Sidebar          — Database schema browser, prompt history, query history
-
-
 🔮 Future Enhancements
 
 - [ ] Support for PostgreSQL / MySQL backends
@@ -192,5 +177,5 @@ Sidebar          — Database schema browser, prompt history, query history
 👤 Author
 
 Built for Hackathon at Infinite IT solutions.  
-Tech Stack: Python · Streamlit · SQLite · Ollama llama3 · Matplotlib
+Tech Stack: Python · Streamlit · SQLite ·Groq API llam3 · Matplotlib
 
